@@ -1,0 +1,203 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #222 0, #000 55%, #000 100%);
+  color: #f5f5f5;
+}
+
+body {
+  display: flex;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#top-bar {
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+#top-bar h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f0e6d2;
+}
+
+#main-layout {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#book-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+#book-container {
+  position: relative;
+  width: 100%;
+  max-width: min(1150px, 100vw - 32px);
+  aspect-ratio: 3 / 2;
+  background: radial-gradient(circle at center, #333 0, #111 45%, #000 100%);
+  border-radius: 18px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.page-view.hidden {
+  display: none;
+}
+
+#single-page-image,
+#left-page-image,
+#right-page-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background: #111;
+}
+
+#spread-view {
+  justify-content: space-between;
+}
+
+#spread-view img {
+  width: 75%;
+}
+
+#spread-view {
+  margin-left: -50%; /* ajuste fino: -1%, -2%, -3%... */
+}
+
+#book-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+#page-jump-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e0dacb;
+}
+
+#page-jump {
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.8);
+  color: #f5f5f5;
+  font-size: 0.8rem;
+}
+
+#book-controls button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #f0e6d2, #d1c3a4);
+  color: #1a130d;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+#book-controls button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8);
+  filter: brightness(1.05);
+}
+
+#book-controls button:active {
+  transform: translateY(0);
+  box-shadow: none;
+  filter: brightness(0.97);
+}
+
+#page-indicator {
+  min-width: 7rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #e0dacb;
+  opacity: 0.85;
+}
+
+#footer {
+  padding: 0.5rem 1rem 0.8rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #b0a28b;
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 768px) {
+  #book-container {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  #top-bar h1 {
+    font-size: 1rem;
+  }
+
+  #spread-view img {
+    width: 49%;
+  }
+}
+

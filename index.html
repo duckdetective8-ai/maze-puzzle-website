@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAZE – Interactive Book</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header id="top-bar">
+        <h1>MAZE – Interactive Book</h1>
+      </header>
+
+      <main id="main-layout">
+        <section id="book-area">
+          <div id="book-container">
+            <!-- Task 1: just display the images -->
+            <div id="single-page-view" class="page-view">
+              <img id="single-page-image" alt="MAZE book page" />
+            </div>
+
+            <div id="spread-view" class="page-view hidden">
+              <img id="left-page-image" alt="MAZE book left page" />
+              <img id="right-page-image" alt="MAZE book right page" />
+            </div>
+          </div>
+
+          <div id="book-controls">
+            <button id="prev-button" type="button">&larr; Previous</button>
+            <span id="page-indicator"></span>
+            <label id="page-jump-label">
+              Page
+              <select id="page-jump"></select>
+            </label>
+            <button id="next-button" type="button">Next &rarr;</button>
+          </div>
+        </section>
+      </main>
+
+      <footer id="footer">
+        <small>Prototype – Task 1: static page display (no animation / no doors yet).</small>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+  </html>
+
